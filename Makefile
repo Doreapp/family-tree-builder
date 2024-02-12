@@ -36,6 +36,11 @@ else
 	@echo $(DOCKER_IMAGE) is ready.
 endif
 
+lint: ## Check the code format using 'npm run lint'
+lint: _docker_build
+	$(DOCKER_RUN) $(DOCKER_IMAGE) npm run lint \
+		| sed "s|/opt/share|$(shell pwd)|g"
+
 it: interactive
 interactive: ## Start an interactive prompt with docker
 interactive: _docker_build
