@@ -2,6 +2,7 @@
   "name": "family-tree-builder",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://antoine.mandin.dev/family-tree-builder",
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
