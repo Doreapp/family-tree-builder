@@ -1,11 +1,10 @@
-import AddIcon from "@mui/icons-material/Add";
-import { Container, CssBaseline, IconButton, Stack } from "@mui/material";
+import { Container, CssBaseline, Stack } from "@mui/material";
 import { useState } from "react";
 import Tree from "./components/Tree";
 import { Person } from "./core/models";
 
 function App() {
-  const [rootPerson] = useState<Person | undefined>();
+  const [rootPerson, setRootPerson] = useState<Person>({ name: "" });
 
   return (
     <CssBaseline>
@@ -17,13 +16,7 @@ function App() {
           alignItems="center"
           spacing={2}
         >
-          {rootPerson ? (
-            <Tree person={rootPerson} />
-          ) : (
-            <IconButton>
-              <AddIcon />
-            </IconButton>
-          )}
+          <Tree person={rootPerson} setPerson={setRootPerson} />
         </Stack>
       </Container>
     </CssBaseline>
